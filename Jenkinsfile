@@ -1,10 +1,10 @@
 pipeline {
     agent any
     // Check for changes in the SCM every minute
-   triggers {
-       pollSCM '* * * * *'
+    triggers {
+        pollSCM '* * * * *'
     }
-    
+
     stages {
         stage('Run Python Script') {
             steps {
@@ -12,7 +12,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             cleanWs()
