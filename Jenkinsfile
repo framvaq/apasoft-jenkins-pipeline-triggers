@@ -1,8 +1,9 @@
 pipeline {
     agent any
     // Check for changes in the SCM every minute
-    triggers {
-        pollSCM '* * * * *'
+    options {
+        buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '2')
+        timeout(1)
     }
 
     stages {
