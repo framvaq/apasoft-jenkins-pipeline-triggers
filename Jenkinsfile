@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Run Python Script') {
             steps {
-                pwsh 'python3 view_machine_data.py'
+                powershell 'python3 view_machine_data.py'
             }
         }
     }
